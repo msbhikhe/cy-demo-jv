@@ -23,3 +23,30 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('deleteComputers', name => {
+    cy.visit('/computers');
+    cy.filterByName(name);
+    cy.getProductCount().then(count => {
+        if (count === 0) {
+            return;
+        }
+
+        while (count !== 0) {
+            cy.goToFirstProduct();
+            cy.contains('Delete').click();
+            cy.filterByName(name);
+            count--;
+        }
+    });
+});
+
+Cypress.Commands.add('saveComputerDetails', ({ name, introduced, discontinued, company }) => {
+    cy.get('#name').clear().type(name);
+
+    introduced ? cy.get('#introduced').clear().type(introduced) : cy.get('#introduced').clear();
+    discontinued ? cy.get('#discontinued').clear().type(discontinued) : cy.get('#discontinued').clear();
+
+    cy.get('#company').select(company);
+
+    cy.get('.btn.primary').click();
+});

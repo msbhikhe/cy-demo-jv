@@ -1,0 +1,32 @@
+[
+    {
+        "name": "MCOMP1",
+        "introduced": "",
+        "discontinued": "",
+        "company": ""
+    },
+    {
+        "name": "MCOMP2",
+        "introduced": "2000-01-01",
+        "discontinued": "",
+        "company": ""
+    },
+    {
+        "name": "MCOMP3",
+        "introduced": "2000-01-01",
+        "discontinued": "2020-12-31",
+        "company": ""
+    },
+    {
+        "name": "MCOMP4",
+        "introduced": "2000-01-01",
+        "discontinued": "2020-12-31",
+        "company": "ASUS"
+    },
+    {
+        "name": "MCOMP5",
+        "introduced": "2010-01-01",
+        "discontinued": "2010-01-01",
+        "company": "Apple Inc."
+    }
+]
